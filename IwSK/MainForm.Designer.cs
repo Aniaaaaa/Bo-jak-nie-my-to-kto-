@@ -63,7 +63,7 @@
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 0);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(215, 366);
+            this.leftPanel.Size = new System.Drawing.Size(222, 366);
             this.leftPanel.TabIndex = 1;
             // 
             // panel1
@@ -73,14 +73,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 248);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(215, 40);
+            this.panel1.Size = new System.Drawing.Size(222, 40);
             this.panel1.TabIndex = 1;
             // 
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(105, 6);
+            this.button2.Location = new System.Drawing.Point(109, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -91,7 +91,7 @@
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.Location = new System.Drawing.Point(24, 6);
+            this.button1.Location = new System.Drawing.Point(28, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -103,7 +103,7 @@
             // 
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
@@ -133,8 +133,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(215, 248);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(222, 248);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label7
@@ -142,9 +141,9 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Location = new System.Drawing.Point(3, 93);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 31);
+            this.label7.Size = new System.Drawing.Size(84, 31);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Sing timeout?";
+            this.label7.Text = "Timeout znaku";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
@@ -152,7 +151,7 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Location = new System.Drawing.Point(3, 62);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 31);
+            this.label5.Size = new System.Drawing.Size(84, 31);
             this.label5.TabIndex = 4;
             this.label5.Text = "Typ transmisji:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,7 +161,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Location = new System.Drawing.Point(3, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 31);
+            this.label3.Size = new System.Drawing.Size(84, 31);
             this.label3.TabIndex = 2;
             this.label3.Text = "Port:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -174,9 +173,9 @@
             this.comboBox8.DisplayMember = "Value";
             this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(83, 220);
+            this.comboBox8.Location = new System.Drawing.Point(93, 220);
             this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(129, 21);
+            this.comboBox8.Size = new System.Drawing.Size(127, 21);
             this.comboBox8.TabIndex = 15;
             this.comboBox8.ValueMember = "Key";
             // 
@@ -185,9 +184,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 124);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 31);
+            this.label1.Size = new System.Drawing.Size(84, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cycle timeout?";
+            this.label1.Text = "Timeout trans.";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -195,7 +194,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 31);
+            this.label2.Size = new System.Drawing.Size(84, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Prędkość:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,9 +207,9 @@
             this.comboBox1.DisplayMember = "Value";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(83, 3);
+            this.comboBox1.Location = new System.Drawing.Point(93, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(129, 21);
+            this.comboBox1.Size = new System.Drawing.Size(127, 21);
             this.comboBox1.TabIndex = 8;
             this.comboBox1.ValueMember = "Key";
             // 
@@ -221,9 +220,9 @@
             this.comboBox2.DisplayMember = "Value";
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(83, 34);
+            this.comboBox2.Location = new System.Drawing.Point(93, 34);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(129, 21);
+            this.comboBox2.Size = new System.Drawing.Size(127, 21);
             this.comboBox2.TabIndex = 9;
             this.comboBox2.ValueMember = "Key";
             // 
@@ -232,7 +231,7 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Location = new System.Drawing.Point(3, 155);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 31);
+            this.label6.Size = new System.Drawing.Size(84, 31);
             this.label6.TabIndex = 5;
             this.label6.Text = "Typ stacji:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -244,9 +243,9 @@
             this.comboBox3.DisplayMember = "Value";
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(83, 65);
+            this.comboBox3.Location = new System.Drawing.Point(93, 65);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(129, 21);
+            this.comboBox3.Size = new System.Drawing.Size(127, 21);
             this.comboBox3.TabIndex = 10;
             this.comboBox3.ValueMember = "Key";
             // 
@@ -255,7 +254,7 @@
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Location = new System.Drawing.Point(3, 186);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 31);
+            this.label8.Size = new System.Drawing.Size(84, 31);
             this.label8.TabIndex = 7;
             this.label8.Text = "Adres:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -265,7 +264,7 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Location = new System.Drawing.Point(3, 217);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 31);
+            this.label4.Size = new System.Drawing.Size(84, 31);
             this.label4.TabIndex = 3;
             this.label4.Text = "Retransmisja:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -277,9 +276,9 @@
             this.comboBox4.DisplayMember = "Value";
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(83, 96);
+            this.comboBox4.Location = new System.Drawing.Point(93, 96);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(129, 21);
+            this.comboBox4.Size = new System.Drawing.Size(127, 21);
             this.comboBox4.TabIndex = 11;
             this.comboBox4.ValueMember = "Key";
             // 
@@ -290,9 +289,9 @@
             this.comboBox5.DisplayMember = "Value";
             this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(83, 127);
+            this.comboBox5.Location = new System.Drawing.Point(93, 127);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(129, 21);
+            this.comboBox5.Size = new System.Drawing.Size(127, 21);
             this.comboBox5.TabIndex = 12;
             this.comboBox5.ValueMember = "Key";
             // 
@@ -303,11 +302,12 @@
             this.comboBox6.DisplayMember = "Value";
             this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(83, 158);
+            this.comboBox6.Location = new System.Drawing.Point(93, 158);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(129, 21);
+            this.comboBox6.Size = new System.Drawing.Size(127, 21);
             this.comboBox6.TabIndex = 13;
             this.comboBox6.ValueMember = "Key";
+            this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
             // 
             // comboBox7
             // 
@@ -316,9 +316,9 @@
             this.comboBox7.DisplayMember = "Value";
             this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(83, 189);
+            this.comboBox7.Location = new System.Drawing.Point(93, 189);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(129, 21);
+            this.comboBox7.Size = new System.Drawing.Size(127, 21);
             this.comboBox7.TabIndex = 14;
             this.comboBox7.ValueMember = "Key";
             // 
@@ -329,7 +329,7 @@
             this.ClientSize = new System.Drawing.Size(614, 366);
             this.Controls.Add(this.leftPanel);
             this.Name = "MainForm";
-            this.Text = "♥♥♥ Modźbas ♥♥♥";
+            this.Text = "Modbus";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.leftPanel.ResumeLayout(false);
             this.leftPanel.PerformLayout();
