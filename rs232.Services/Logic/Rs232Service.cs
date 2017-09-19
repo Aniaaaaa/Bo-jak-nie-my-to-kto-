@@ -58,10 +58,6 @@ namespace rs232.Services
         {
             if (_serialPort.IsOpen)
             {
-                byte[] bytestosend = { 0x14, 0x0E };
-
-                _serialPort.Write(bytestosend, 0, bytestosend.Length);
-
                 _serialPort.WriteLine($"{message}{terminator}");
             }
         }
@@ -74,7 +70,7 @@ namespace rs232.Services
                 {
                     return $"[in] {_serialPort.ReadLine()}";
                 }
-                catch (TimeoutException)
+                catch
                 {
                     return null;
                 }

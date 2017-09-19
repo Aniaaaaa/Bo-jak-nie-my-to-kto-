@@ -51,8 +51,15 @@ namespace rs232
 
                     if (!string.IsNullOrEmpty(message))
                     {
-                        this.textBox2.AppendText(Environment.NewLine);
-                        this.textBox2.AppendText(message);
+                        try
+                        {
+                            this.textBox2.AppendText(Environment.NewLine);
+                            this.textBox2.AppendText(message);
+                        }
+                        catch
+                        {
+
+                        }
                     }
                 }
             }).Start();

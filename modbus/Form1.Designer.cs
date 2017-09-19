@@ -435,6 +435,7 @@
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(0, 0);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
