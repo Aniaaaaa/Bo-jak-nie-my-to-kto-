@@ -1,4 +1,4 @@
-﻿using rs232.Services;
+﻿using modbus.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,14 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IwSK
+namespace modbus
 {
     public partial class MainForm : Form
     {
-        private readonly IRs232Service service;
+        private readonly IModbusService service;
         public MainForm()
         {
-            service = new Rs232Service();
+            service = new ModbusService();
 
             InitializeComponent();
         }

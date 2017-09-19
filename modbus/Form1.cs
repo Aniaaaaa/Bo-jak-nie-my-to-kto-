@@ -1,4 +1,4 @@
-﻿using modbus.Services;
+﻿using rs232.Services;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,11 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace modbus
+namespace rs232
 {
     public partial class Form1 : Form
     {
-        private readonly IModbusService service;
+        private readonly IRs232Service service;
 
         enum DataType { ASCII, HEX};
         enum Terminator {CR, LR, CRLF, BRAK};
@@ -22,7 +22,7 @@ namespace modbus
         enum Parity { ODD, EVEN, BRAK };
         public Form1()
         {
-            service = new ModbusService();
+            service = new Rs232Service();
 
             InitializeComponent();
         }
