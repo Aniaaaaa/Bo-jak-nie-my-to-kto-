@@ -1,4 +1,5 @@
 ﻿using rs232.Services;
+using static rs232.Services.Enums.Enums;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,10 +17,6 @@ namespace rs232
     {
         private readonly IRs232Service service;
 
-        enum DataType { ASCII, HEX};
-        enum Terminator {CR, LR, CRLF, BRAK};
-        enum FlowControl { XON_XOFF, RTS_CTS, BRAK};
-        enum Parity { ODD, EVEN, BRAK };
         public Form1()
         {
             service = new Rs232Service();
