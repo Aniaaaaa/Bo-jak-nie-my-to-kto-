@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using rs232.Services.Model;
+using System.Threading;
 
 namespace rs232
 {
@@ -40,6 +41,21 @@ namespace rs232
             comboBox9.DataSource = Enum.GetNames(typeof(DataType)).Select(it => new KeyValuePair<DataType, string>((DataType)Enum.Parse(typeof(DataType),it), it)).ToList();
             signals = new Dictionary<Signal, Button> { { Signal.OB, button4}, { Signal.DA, button5 }, { Signal.DTR, button6 },
                 {Signal.DSR, button7 }, { Signal.RTS, button8 }, {Signal.CTS, button9 }, {Signal.CD, button10 }, {Signal.RI, button11 } };
+
+            new Thread(() =>
+            {
+                Thread.CurrentThread.IsBackground = true;
+                while (true)
+                {
+                    var message = service.ReceiveMessage();
+
+                    if (!string.IsNullOrEmpty(message))
+                    {
+                        this.textBox2.AppendText(Environment.NewLine);
+                        this.textBox2.AppendText(message);
+                    }
+                }
+            }).Start();
         }
 
         public void SetSignalState(Signal signal, SignalState state)
@@ -103,14 +119,6 @@ namespace rs232
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var message = service.Receive();
-
-            if (!string.IsNullOrEmpty(message))
-            {
-                this.textBox2.AppendText(Environment.NewLine);
-                this.textBox2.AppendText(message);
-            }
-
             SetAllEnabled(true);
             service.ClosePort();
         }
@@ -123,8 +131,13 @@ namespace rs232
 
         private void button12_Click(object sender, EventArgs e)
         {
-            service.Send(this.textBox3.Text);
+            var message = this.textBox3.Text;
+            service.SendMessage(message);
+            this.textBox2.AppendText(Environment.NewLine);
+            this.textBox2.AppendText($"[out] {message}");
+
             this.textBox3.Text = string.Empty;
+            this.textBox3.Focus();
         }
     }
 }

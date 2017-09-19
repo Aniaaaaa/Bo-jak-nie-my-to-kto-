@@ -49,20 +49,24 @@ namespace rs232.Services
             }
         }
 
-        public void Send(string message)
-        {
-            if (_serialPort.IsOpen)
-            {
-                _serialPort.WriteLine($"[out] {message}{terminator}");
-            }
-        }
-
         public void ClosePort()
         {
             _serialPort.Close();
         }
 
-        public string Receive()
+        public void SendMessage(string message)
+        {
+            if (_serialPort.IsOpen)
+            {
+                byte[] bytestosend = { 0x14, 0x0E };
+
+                _serialPort.Write(bytestosend, 0, bytestosend.Length);
+
+                _serialPort.WriteLine($"{message}{terminator}");
+            }
+        }
+
+        public string ReceiveMessage()
         {
             if (_serialPort.IsOpen)
             {

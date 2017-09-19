@@ -14,10 +14,10 @@ namespace rs232.Services
 
         bool OpenPort(PortParameters portParameters);
 
-        void Send(string message);
-
         void ClosePort();
 
-        string Receive();
+        void SendMessage(string message);
+
+        string ReceiveMessage();
     }
 }
