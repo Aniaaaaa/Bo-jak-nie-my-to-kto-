@@ -17,7 +17,7 @@ namespace rs232.Services.Model
         public string PortName { get; set; }
         public FlowControl FlowControl { get; set; }
         public Parity Parity { get; set; }
-        public int Timeout { get; set; }
+        public double Timeout { get; set; }
         public DataType DataType { get; set; }
     }
 }

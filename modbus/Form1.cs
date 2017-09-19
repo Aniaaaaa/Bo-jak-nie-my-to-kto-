@@ -61,9 +61,9 @@ namespace rs232
                 MyTerminator = (Terminator)Enum.Parse(typeof(Terminator), this.comboBox4.Text)
                     == Terminator.WŁASNY ? this.textBox1.Text : string.Empty,
                 PortName = this.comboBox5.Text,
-                FlowControl = (FlowControl)Enum.Parse(typeof(FlowControl), this.comboBox6.Text.Replace("/", "_")),
+                //FlowControl = (FlowControl)Enum.Parse(typeof(FlowControl), this.comboBox6.Text.Replace('/', '_')),
                 Parity = (Parity)Enum.Parse(typeof(Parity), this.comboBox7.Text),
-                Timeout = Int32.Parse(this.comboBox8.Text),
+                Timeout = Double.Parse(this.comboBox8.Text),
                 DataType = (DataType)Enum.Parse(typeof(DataType), this.comboBox9.Text)
             };
 
