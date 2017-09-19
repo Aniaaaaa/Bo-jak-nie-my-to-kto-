@@ -22,6 +22,17 @@ namespace rs232.Services
         public void SetParameters(PortParameters portParameters)
         {
             PortParameters = portParameters;
+            _serialPort.Open();
+        }
+
+        public void Send(string message)
+        {
+            _serialPort.WriteLine($"[out] {message}");
+        }
+
+        public void ClosePort()
+        {
+            _serialPort.Close();
         }
     }
 }

@@ -13,5 +13,9 @@ namespace rs232.Services
         List<string> GetPortNames();
 
         void SetParameters(PortParameters portParameters);
+
+        void Send(string message);
+
+        void ClosePort();
     }
 }

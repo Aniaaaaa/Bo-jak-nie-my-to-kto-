@@ -17,19 +17,14 @@ namespace rs232
     public partial class Form1 : Form
     {
         private readonly IRs232Service service;
-        public enum Signal { OB, DA, DTR, DSR, RTS, CTS, CD, RI };
-        public enum SignalState { Unknown = 0, Inactive = 1, Active = 2 };
 
         public Form1()
         {
             service = new Rs232Service();
 
-            var tmp = new System.IO.Ports.SerialPort();
-            //tmp.PortName = 
-            //tmp.BaudRate
-
             InitializeComponent();
         }
+
         private Dictionary<Signal, Button> signals;
 
         private void Form1_Load(object sender, EventArgs e)
@@ -64,12 +59,14 @@ namespace rs232
                 MyTerminator = (Terminator)Enum.Parse(typeof(Terminator), this.comboBox4.Text)
                     == Terminator.WŁASNY ? this.textBox1.Text : string.Empty,
                 PortName = this.comboBox5.Text,
-                //FlowControl = (FlowControl)Enum.Parse(typeof(FlowControl), this.comboBox6.Text.Replace('/', '_')),
+                FlowControl = (FlowControl)Enum.Parse(typeof(FlowControl), this.comboBox6.Text.Replace('/', '_')),
                 Parity = (Parity)Enum.Parse(typeof(Parity), this.comboBox7.Text),
                 Timeout = Double.Parse(this.comboBox8.Text),
                 DataType = (DataType)Enum.Parse(typeof(DataType), this.comboBox9.Text)
             };
             service.SetParameters(portParameters);
+
+            service.Send("Hello World");
         }
         private void SetAllEnabled(bool enabled)
         { 
@@ -93,6 +90,7 @@ namespace rs232
         private void button2_Click(object sender, EventArgs e)
         {
             SetAllEnabled(true);
+            service.ClosePort();
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
