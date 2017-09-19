@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
+using rs232.Services.Model;
 
 namespace rs232
 {
@@ -44,13 +44,30 @@ namespace rs232
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach(var control in tableLayoutPanel1.Controls)
+            foreach (var control in tableLayoutPanel1.Controls)
             {
                 if (control is Control)
                     ((Control)control).Enabled = false;
             }
             button1.Enabled = false;
             button2.Enabled = true;
+
+            var portParameters = new PortParameters
+            {
+                Speed = Int32.Parse(this.comboBox1.Text),
+                StopBits = Int32.Parse(this.comboBox2.Text),
+                DataBits = Int32.Parse(this.comboBox3.Text),
+                Terminator = (Terminator)Enum.Parse(typeof(Terminator), this.comboBox4.Text),
+                MyTerminator = (Terminator)Enum.Parse(typeof(Terminator), this.comboBox4.Text)
+                    == Terminator.WŁASNY ? this.textBox1.Text : string.Empty,
+                PortName = this.comboBox5.Text,
+                FlowControl = (FlowControl)Enum.Parse(typeof(FlowControl), this.comboBox6.Text),
+                Parity = (Parity)Enum.Parse(typeof(Parity), this.comboBox7.Text),
+                Timeout = Int32.Parse(this.comboBox8.Text),
+                DataType = (DataType)Enum.Parse(typeof(DataType), this.comboBox9.Text)
+            };
+
+            service.SetParameters(portParameters);
         }
         private void SetOwnTerminatorVisible(bool visible)
         {
