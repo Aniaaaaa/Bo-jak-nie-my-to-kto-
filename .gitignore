@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/IwSK/obj/Debug
+/IwSK/bin/Debug
+/modbus/obj/Debug
+/modbus/bin/Debug
