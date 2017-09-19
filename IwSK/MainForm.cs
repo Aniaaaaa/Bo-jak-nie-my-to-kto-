@@ -11,11 +11,10 @@ using System.Windows.Forms;
 
 namespace IwSK
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private readonly IRs232Service service;
-
-        public Form1()
+        public MainForm()
         {
             service = new Rs232Service();
 
