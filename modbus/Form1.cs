@@ -26,7 +26,7 @@ namespace rs232
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox1.DataSource = new List<int> { 150, 300, 600, 1200, 2400, 4800, 9600 }.Select(it => new KeyValuePair<int, int>(it, it)).ToList();
+            comboBox1.DataSource = new List<int> { 100, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 56000, 57600, 115200 }.Select(it => new KeyValuePair<int, int>(it, it)).ToList();
             comboBox2.DataSource = new List<int> { 1, 2 }.Select(it => new KeyValuePair<int, int>(it, it)).ToList();
             comboBox3.DataSource = new List<int> { 5, 6, 7, 8 }.Select(it => new KeyValuePair<int, int>(it, it)).ToList();
             comboBox4.DataSource = Enum.GetNames(typeof(Terminator)).Select(it => new KeyValuePair<Terminator, string>((Terminator)Enum.Parse(typeof(Terminator), it), it)).ToList();
