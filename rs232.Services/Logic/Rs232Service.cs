@@ -9,9 +9,11 @@ namespace rs232.Services
 {
     public class Rs232Service : IRs232Service
     {
-        public string HelloWorld()
+        public int MyProperty { get; set; }
+
+        public List<string> GetPortNames()
         {
-            return "HelloWorld";
+            return SerialPort.GetPortNames().ToList();
         }
     }
 }

@@ -8,6 +8,6 @@ namespace rs232.Services
 {
     public interface IRs232Service
     {
-        string HelloWorld();
+        List<string> GetPortNames();
     }
 }
