@@ -84,9 +84,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\rs232.Services\rs232.Services.csproj">
-      <Project>{c5ac63ff-8297-43bd-b8be-f4d2b4ef4a3b}</Project>
-      <Name>rs232.Services</Name>
+    <ProjectReference Include="modbus.Services\modbus.Services.csproj">
+      <Project>{248b6436-c124-46a8-9ccd-88ec75701f2b}</Project>
+      <Name>modbus.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

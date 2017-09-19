@@ -1,4 +1,4 @@
-﻿namespace modbus
+﻿namespace rs232
 {
     partial class Form1
     {
@@ -143,9 +143,35 @@
             this.label3.Text = "Bity stopu:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // comboBox4
+            // 
+            this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox4.DisplayMember = "Value";
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(83, 84);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(111, 21);
+            this.comboBox4.TabIndex = 11;
+            this.comboBox4.ValueMember = "Key";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox6.DisplayMember = "Value";
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(83, 138);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(111, 21);
+            this.comboBox6.TabIndex = 13;
+            this.comboBox6.ValueMember = "Key";
+            // 
             // comboBox8
             // 
-            this.comboBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox8.DisplayMember = "Value";
             this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -178,7 +204,7 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.DisplayMember = "Value";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -191,7 +217,7 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox2.DisplayMember = "Value";
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -214,7 +240,7 @@
             // 
             // comboBox3
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox3.DisplayMember = "Value";
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -273,7 +299,7 @@
             // 
             // comboBox5
             // 
-            this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox5.DisplayMember = "Value";
             this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -299,7 +325,7 @@
             // 
             // comboBox7
             // 
-            this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox7.DisplayMember = "Value";
             this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -309,6 +335,19 @@
             this.comboBox7.Size = new System.Drawing.Size(111, 21);
             this.comboBox7.TabIndex = 14;
             this.comboBox7.ValueMember = "Key";
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox9.DisplayMember = "Value";
+            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Location = new System.Drawing.Point(83, 219);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(111, 21);
+            this.comboBox9.TabIndex = 17;
+            this.comboBox9.ValueMember = "Key";
             // 
             // centerPanel
             // 

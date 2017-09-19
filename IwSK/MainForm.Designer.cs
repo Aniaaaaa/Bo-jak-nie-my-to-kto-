@@ -1,4 +1,4 @@
-﻿namespace IwSK
+﻿namespace modbus
 {
     partial class MainForm
     {
