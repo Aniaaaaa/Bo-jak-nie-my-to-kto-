@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rs232", "rs232.csproj", "{178829FB-360A-467D-9711-554533A8CC4F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "modbus", "..\modbus\modbus.csproj", "{B48F7C7C-3FC6-4866-B706-59EB32CE0EEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rs232.Services", "..\rs232.Services\rs232.Services.csproj", "{C5AC63FF-8297-43BD-B8BE-F4D2B4EF4A3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "modbus.Services", "modbus.Services\modbus.Services.csproj", "{248B6436-C124-46A8-9CCD-88EC75701F2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +25,19 @@ Global
 		{B48F7C7C-3FC6-4866-B706-59EB32CE0EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B48F7C7C-3FC6-4866-B706-59EB32CE0EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B48F7C7C-3FC6-4866-B706-59EB32CE0EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5AC63FF-8297-43BD-B8BE-F4D2B4EF4A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5AC63FF-8297-43BD-B8BE-F4D2B4EF4A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5AC63FF-8297-43BD-B8BE-F4D2B4EF4A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5AC63FF-8297-43BD-B8BE-F4D2B4EF4A3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{248B6436-C124-46A8-9CCD-88EC75701F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{248B6436-C124-46A8-9CCD-88EC75701F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{248B6436-C124-46A8-9CCD-88EC75701F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{248B6436-C124-46A8-9CCD-88EC75701F2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00FA1E73-68B6-481A-B66A-AE89FFFAB39D}
 	EndGlobalSection
 EndGlobal
