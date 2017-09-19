@@ -40,7 +40,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModbusService.cs" />
+    <Compile Include="Interface\IModbusService.cs" />
+    <Compile Include="Logic\ModbusService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

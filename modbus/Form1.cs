@@ -1,4 +1,5 @@
-﻿using System;
+﻿using modbus.Services;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,16 @@ namespace modbus
 {
     public partial class Form1 : Form
     {
+        private readonly IModbusService service;
+
         enum DataType { ASCII, HEX};
         enum Terminator {CR, LR, CRLF, BRAK};
         enum FlowControl { XON_XOFF, RTS_CTS, BRAK};
         enum Parity { ODD, EVEN, BRAK };
         public Form1()
         {
+            service = new ModbusService();
+
             InitializeComponent();
         }
 
