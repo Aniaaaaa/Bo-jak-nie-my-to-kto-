@@ -12,7 +12,6 @@ namespace rs232.Services
     public class Rs232Service : IRs232Service
     {
         private readonly SerialPort _serialPort = new SerialPort();
-        private string terminator;
         private DataType dataType;
 
         public List<string> GetPortNames()
@@ -22,10 +21,6 @@ namespace rs232.Services
 
         public bool OpenPort(PortParameters portParameters)
         {
-            terminator = portParameters.Terminator != Terminator.WŁASNY
-                ? Enum.GetName(typeof(Terminator), portParameters.Terminator)
-                : portParameters.MyTerminator;
-
             dataType = portParameters.DataType;
 
             _serialPort.BaudRate = portParameters.Speed;
@@ -36,6 +31,9 @@ namespace rs232.Services
             _serialPort.Parity = (System.IO.Ports.Parity)portParameters.Parity;
             _serialPort.ReadTimeout = (int)(portParameters.Timeout * 100);
             _serialPort.WriteTimeout = (int)(portParameters.Timeout * 100);
+            _serialPort.NewLine = portParameters.Terminator != Terminator.WŁASNY
+                ? Enum.GetName(typeof(Terminator), portParameters.Terminator)
+                : portParameters.MyTerminator;
 
             try
             {
@@ -58,7 +56,7 @@ namespace rs232.Services
         {
             if (_serialPort.IsOpen)
             {
-                _serialPort.WriteLine($"{message}{terminator}");
+                _serialPort.WriteLine(message);
             }
         }
 
