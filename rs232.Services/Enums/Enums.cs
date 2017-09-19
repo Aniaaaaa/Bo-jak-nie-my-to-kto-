@@ -10,7 +10,7 @@ namespace rs232.Services.Enums
     {
         public enum DataType { ASCII, HEX };
 
-        public enum Terminator { CR, LR, CRLF, BRAK };
+        public enum Terminator { CR, LR, CRLF, BRAK, WŁASNY };
 
         public enum FlowControl { XON_XOFF, RTS_CTS, BRAK };
 
