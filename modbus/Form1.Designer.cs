@@ -32,9 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.leftPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,26 +53,30 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.centerPanel = new System.Windows.Forms.Panel();
-            this.rightPanel = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.centerPanel = new System.Windows.Forms.Panel();
+            this.rightPanel = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.leftPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.centerPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // leftPanel
@@ -93,6 +99,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(212, 70);
             this.panel1.TabIndex = 1;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(23, 35);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(156, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Przetestuj - PING";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -160,6 +175,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(212, 268);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Location = new System.Drawing.Point(3, 241);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 27);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Typ transmisji:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -199,7 +224,7 @@
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Location = new System.Drawing.Point(83, 217);
             this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(123, 21);
+            this.comboBox8.Size = new System.Drawing.Size(126, 21);
             this.comboBox8.TabIndex = 15;
             this.comboBox8.ValueMember = "Key";
             // 
@@ -233,7 +258,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(83, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(123, 21);
+            this.comboBox1.Size = new System.Drawing.Size(126, 21);
             this.comboBox1.TabIndex = 8;
             this.comboBox1.ValueMember = "Key";
             // 
@@ -246,7 +271,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(83, 30);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(123, 21);
+            this.comboBox2.Size = new System.Drawing.Size(126, 21);
             this.comboBox2.TabIndex = 9;
             this.comboBox2.ValueMember = "Key";
             // 
@@ -269,7 +294,7 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(83, 57);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(123, 21);
+            this.comboBox3.Size = new System.Drawing.Size(126, 21);
             this.comboBox3.TabIndex = 10;
             this.comboBox3.ValueMember = "Key";
             // 
@@ -302,7 +327,7 @@
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(83, 84);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(123, 21);
+            this.comboBox4.Size = new System.Drawing.Size(126, 21);
             this.comboBox4.TabIndex = 11;
             this.comboBox4.ValueMember = "Key";
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
@@ -316,7 +341,7 @@
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(83, 136);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(123, 21);
+            this.comboBox5.Size = new System.Drawing.Size(126, 21);
             this.comboBox5.TabIndex = 12;
             this.comboBox5.ValueMember = "Key";
             // 
@@ -329,7 +354,7 @@
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(83, 163);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(123, 21);
+            this.comboBox6.Size = new System.Drawing.Size(126, 21);
             this.comboBox6.TabIndex = 13;
             this.comboBox6.ValueMember = "Key";
             // 
@@ -342,13 +367,37 @@
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Location = new System.Drawing.Point(83, 190);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(123, 21);
+            this.comboBox7.Size = new System.Drawing.Size(126, 21);
             this.comboBox7.TabIndex = 14;
             this.comboBox7.ValueMember = "Key";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(83, 111);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(126, 20);
+            this.textBox1.TabIndex = 16;
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox9.DisplayMember = "Value";
+            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Location = new System.Drawing.Point(83, 244);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(126, 21);
+            this.comboBox9.TabIndex = 19;
+            this.comboBox9.ValueMember = "Key";
             // 
             // centerPanel
             // 
             this.centerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.centerPanel.Controls.Add(this.textBox2);
+            this.centerPanel.Controls.Add(this.panel2);
             this.centerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.centerPanel.Location = new System.Drawing.Point(212, 0);
             this.centerPanel.Name = "centerPanel";
@@ -372,66 +421,25 @@
             this.rightPanel.Size = new System.Drawing.Size(70, 400);
             this.rightPanel.TabIndex = 0;
             // 
-            // textBox1
+            // button11
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(83, 111);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 20);
-            this.textBox1.TabIndex = 16;
-            // 
-            // comboBox9
-            // 
-            this.comboBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox9.DisplayMember = "Value";
-            this.comboBox9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(83, 244);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(123, 21);
-            this.comboBox9.TabIndex = 19;
-            this.comboBox9.ValueMember = "Key";
-            // 
-            // label9
-            // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Location = new System.Drawing.Point(3, 241);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 27);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Typ transmisji:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(23, 35);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(156, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Przetestuj - PING";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.Control;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button4.FlatAppearance.BorderSize = 3;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.ImageIndex = 0;
-            this.button4.ImageList = this.imageList1;
-            this.button4.Location = new System.Drawing.Point(0, 38);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(70, 30);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "OB";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
+            this.button11.BackColor = System.Drawing.SystemColors.Control;
+            this.button11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button11.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button11.FlatAppearance.BorderSize = 3;
+            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button11.ImageIndex = 0;
+            this.button11.ImageList = this.imageList1;
+            this.button11.Location = new System.Drawing.Point(0, 248);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(70, 30);
+            this.button11.TabIndex = 7;
+            this.button11.Text = "RI";
+            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button11.UseVisualStyleBackColor = false;
             // 
             // imageList1
             // 
@@ -440,106 +448,6 @@
             this.imageList1.Images.SetKeyName(0, "gray.png");
             this.imageList1.Images.SetKeyName(1, "green.png");
             this.imageList1.Images.SetKeyName(2, "red.png");
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.Control;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button5.FlatAppearance.BorderSize = 3;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.ImageIndex = 0;
-            this.button5.ImageList = this.imageList1;
-            this.button5.Location = new System.Drawing.Point(0, 68);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(70, 30);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "DA";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.SystemColors.Control;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button6.FlatAppearance.BorderSize = 3;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.ImageIndex = 0;
-            this.button6.ImageList = this.imageList1;
-            this.button6.Location = new System.Drawing.Point(0, 98);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(70, 30);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "DTR";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.SystemColors.Control;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button7.FlatAppearance.BorderSize = 3;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.ImageIndex = 0;
-            this.button7.ImageList = this.imageList1;
-            this.button7.Location = new System.Drawing.Point(0, 128);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(70, 30);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "DSR";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.SystemColors.Control;
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button8.FlatAppearance.BorderSize = 3;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.ImageIndex = 0;
-            this.button8.ImageList = this.imageList1;
-            this.button8.Location = new System.Drawing.Point(0, 158);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(70, 30);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "RTS";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.SystemColors.Control;
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button9.FlatAppearance.BorderSize = 3;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.ImageIndex = 0;
-            this.button9.ImageList = this.imageList1;
-            this.button9.Location = new System.Drawing.Point(0, 188);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(70, 30);
-            this.button9.TabIndex = 5;
-            this.button9.Text = "CTS";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button9.UseVisualStyleBackColor = false;
             // 
             // button10
             // 
@@ -561,25 +469,125 @@
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button10.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // button9
             // 
-            this.button11.BackColor = System.Drawing.SystemColors.Control;
-            this.button11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button11.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.button11.FlatAppearance.BorderSize = 3;
-            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.ImageIndex = 0;
-            this.button11.ImageList = this.imageList1;
-            this.button11.Location = new System.Drawing.Point(0, 248);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(70, 30);
-            this.button11.TabIndex = 7;
-            this.button11.Text = "RI";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button11.UseVisualStyleBackColor = false;
+            this.button9.BackColor = System.Drawing.SystemColors.Control;
+            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button9.FlatAppearance.BorderSize = 3;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.ImageIndex = 0;
+            this.button9.ImageList = this.imageList1;
+            this.button9.Location = new System.Drawing.Point(0, 188);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(70, 30);
+            this.button9.TabIndex = 5;
+            this.button9.Text = "CTS";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.SystemColors.Control;
+            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button8.FlatAppearance.BorderSize = 3;
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.ImageIndex = 0;
+            this.button8.ImageList = this.imageList1;
+            this.button8.Location = new System.Drawing.Point(0, 158);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(70, 30);
+            this.button8.TabIndex = 4;
+            this.button8.Text = "RTS";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.Control;
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button7.FlatAppearance.BorderSize = 3;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.ImageIndex = 0;
+            this.button7.ImageList = this.imageList1;
+            this.button7.Location = new System.Drawing.Point(0, 128);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(70, 30);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "DSR";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.SystemColors.Control;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button6.FlatAppearance.BorderSize = 3;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.ImageIndex = 0;
+            this.button6.ImageList = this.imageList1;
+            this.button6.Location = new System.Drawing.Point(0, 98);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(70, 30);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "DTR";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.Control;
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button5.FlatAppearance.BorderSize = 3;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.ImageIndex = 0;
+            this.button5.ImageList = this.imageList1;
+            this.button5.Location = new System.Drawing.Point(0, 68);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(70, 30);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "DA";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.Control;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.button4.FlatAppearance.BorderSize = 3;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.ImageIndex = 0;
+            this.button4.ImageList = this.imageList1;
+            this.button4.Location = new System.Drawing.Point(0, 38);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(70, 30);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "OB";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -592,6 +600,45 @@
             this.label10.TabIndex = 8;
             this.label10.Text = "Stan sygnałów:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox2.Location = new System.Drawing.Point(0, 0);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(460, 370);
+            this.textBox2.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.progressBar1);
+            this.panel2.Controls.Add(this.button12);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 370);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(460, 26);
+            this.panel2.TabIndex = 1;
+            // 
+            // button12
+            // 
+            this.button12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button12.Location = new System.Drawing.Point(0, 0);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 26);
+            this.button12.TabIndex = 0;
+            this.button12.Text = "Wyślij";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.progressBar1.Location = new System.Drawing.Point(75, 0);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(385, 26);
+            this.progressBar1.Step = 1;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 1;
             // 
             // Form1
             // 
@@ -609,7 +656,10 @@
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.centerPanel.ResumeLayout(false);
+            this.centerPanel.PerformLayout();
             this.rightPanel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -653,6 +703,10 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button button12;
     }
 }
 
