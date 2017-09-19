@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using rs232.Services.Model;
 
 namespace rs232
 {
@@ -23,6 +24,10 @@ namespace rs232
         {
             service = new Rs232Service();
 
+            var tmp = new System.IO.Ports.SerialPort();
+            //tmp.PortName = 
+            //tmp.BaudRate
+
             InitializeComponent();
         }
         private Dictionary<Signal, Button> signals;
@@ -33,7 +38,7 @@ namespace rs232
             comboBox2.DataSource = new List<int> { 1, 2 }.Select(it => new KeyValuePair<int, int>(it, it)).ToList();
             comboBox3.DataSource = new List<int> { 5, 6, 7, 8 }.Select(it => new KeyValuePair<int, int>(it, it)).ToList();
             comboBox4.DataSource = Enum.GetNames(typeof(Terminator)).Select(it => new KeyValuePair<Terminator, string>((Terminator)Enum.Parse(typeof(Terminator), it), it)).ToList();
-            comboBox5.DataSource = new List<string> { "DUPA" }.Select(it => new KeyValuePair<string, string>(it, it)).ToList();
+            comboBox5.DataSource = service.GetPortNames().Select(it => new KeyValuePair<string, string>(it, it)).ToList();
             comboBox6.DataSource = Enum.GetNames(typeof(FlowControl)).Select(it => new KeyValuePair<FlowControl, string>((FlowControl)Enum.Parse(typeof(FlowControl), it), it.Replace('_', '/'))).ToList();
             comboBox7.DataSource = Enum.GetNames(typeof(Parity)).Select(it => new KeyValuePair<Parity, string>((Parity)Enum.Parse(typeof(Parity), it), it)).ToList();
             comboBox8.DataSource = Enumerable.Range(1,1000).Select(it => ((double)it)/100).Select(it => new KeyValuePair<double, double>(it, it)).ToList();
@@ -58,6 +63,25 @@ namespace rs232
                 if (control is Control)
                     ((Control)control).Enabled = enabled;
             }
+            button1.Enabled = false;
+            button2.Enabled = true;
+
+            var portParameters = new PortParameters
+            {
+                Speed = Int32.Parse(this.comboBox1.Text),
+                StopBits = Int32.Parse(this.comboBox2.Text),
+                DataBits = Int32.Parse(this.comboBox3.Text),
+                Terminator = (Terminator)Enum.Parse(typeof(Terminator), this.comboBox4.Text),
+                MyTerminator = (Terminator)Enum.Parse(typeof(Terminator), this.comboBox4.Text)
+                    == Terminator.WŁASNY ? this.textBox1.Text : string.Empty,
+                PortName = this.comboBox5.Text,
+                FlowControl = (FlowControl)Enum.Parse(typeof(FlowControl), this.comboBox6.Text.Replace("/", "_")),
+                Parity = (Parity)Enum.Parse(typeof(Parity), this.comboBox7.Text),
+                Timeout = Int32.Parse(this.comboBox8.Text),
+                DataType = (DataType)Enum.Parse(typeof(DataType), this.comboBox9.Text)
+            };
+
+            service.SetParameters(portParameters);
             button1.Enabled = enabled;
             button2.Enabled = !enabled;
             button3.Enabled = !enabled;
