@@ -55,17 +55,6 @@ namespace rs232
         private void button1_Click(object sender, EventArgs e)
         {
             SetAllEnabled(false);
-        }
-        private void SetAllEnabled(bool enabled)
-        { 
-            foreach(var control in tableLayoutPanel1.Controls)
-            {
-                if (control is Control)
-                    ((Control)control).Enabled = enabled;
-            }
-            button1.Enabled = false;
-            button2.Enabled = true;
-
             var portParameters = new PortParameters
             {
                 Speed = Int32.Parse(this.comboBox1.Text),
@@ -80,8 +69,15 @@ namespace rs232
                 Timeout = Int32.Parse(this.comboBox8.Text),
                 DataType = (DataType)Enum.Parse(typeof(DataType), this.comboBox9.Text)
             };
-
             service.SetParameters(portParameters);
+        }
+        private void SetAllEnabled(bool enabled)
+        { 
+            foreach(var control in tableLayoutPanel1.Controls)
+            {
+                if (control is Control)
+                    ((Control)control).Enabled = enabled;
+            }
             button1.Enabled = enabled;
             button2.Enabled = !enabled;
             button3.Enabled = !enabled;
