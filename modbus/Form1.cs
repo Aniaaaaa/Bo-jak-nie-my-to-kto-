@@ -47,6 +47,13 @@ namespace rs232
             button1.Enabled = false;
             button2.Enabled = true;
         }
+        private void SetOwnTerminatorVisible(bool visible)
+        {
+            if (visible)
+                tableLayoutPanel1.RowStyles[4].Height = 25;
+            else
+                tableLayoutPanel1.RowStyles[4].Height = 0;
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -57,6 +64,12 @@ namespace rs232
             }
             button1.Enabled = true;
             button2.Enabled = false;
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Terminator terminator = (Terminator)comboBox4.SelectedValue;
+            SetOwnTerminatorVisible(terminator == Terminator.WŁASNY);
         }
     }
 }
