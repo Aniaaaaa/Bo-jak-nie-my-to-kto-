@@ -10,7 +10,7 @@ namespace rs232.Services.Model
     public class PortParameters
     {
         public int Speed { get; set; }
-        public int StopBits { get; set; }
+        public StopBits StopBits { get; set; }
         public int DataBits { get; set; }
         public Terminator Terminator { get; set; }
         public string MyTerminator { get; set; }

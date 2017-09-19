@@ -49,11 +49,10 @@ namespace rs232
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SetAllEnabled(false);
             var portParameters = new PortParameters
             {
                 Speed = Int32.Parse(this.comboBox1.Text),
-                StopBits = Int32.Parse(this.comboBox2.Text),
+                StopBits = (StopBits)Int32.Parse(this.comboBox2.Text),
                 DataBits = Int32.Parse(this.comboBox3.Text),
                 Terminator = (Terminator)Enum.Parse(typeof(Terminator), this.comboBox4.Text),
                 MyTerminator = (Terminator)Enum.Parse(typeof(Terminator), this.comboBox4.Text)
@@ -64,9 +63,22 @@ namespace rs232
                 Timeout = Double.Parse(this.comboBox8.Text),
                 DataType = (DataType)Enum.Parse(typeof(DataType), this.comboBox9.Text)
             };
-            service.SetParameters(portParameters);
 
-            service.Send("Hello World");
+            this.textBox2.Text = "Konfiguracja portu...";
+
+            var isOpen = service.SetParameters(portParameters);
+            SetAllEnabled(!isOpen);
+
+            if (isOpen)
+            {
+                this.textBox2.AppendText(Environment.NewLine);
+                this.textBox2.Text += "Konfiguracja przebiegła pomyślnie.";
+            }
+            else
+            {
+                this.textBox2.AppendText(Environment.NewLine);
+                this.textBox2.Text += "Konfiguracja NIE przebiegła pomyślnie.";
+            }
         }
         private void SetAllEnabled(bool enabled)
         { 
@@ -97,6 +109,11 @@ namespace rs232
         {
             Terminator terminator = (Terminator)comboBox4.SelectedValue;
             SetOwnTerminatorVisible(terminator == Terminator.WŁASNY);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            service.Send(this.textBox3.Text);
         }
     }
 }
