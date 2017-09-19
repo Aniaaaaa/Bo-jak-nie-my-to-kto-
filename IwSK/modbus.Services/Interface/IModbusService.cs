@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace modbus.Services
 {
-    public class ModbusService
+    public interface IModbusService
     {
 
     }

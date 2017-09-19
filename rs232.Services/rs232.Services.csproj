@@ -40,7 +40,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Rs232Service.cs" />
+    <Compile Include="Interface\IRs232Service.cs" />
+    <Compile Include="Logic\Rs232Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

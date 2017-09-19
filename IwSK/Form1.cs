@@ -1,4 +1,5 @@
-﻿using System;
+﻿using rs232.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,12 @@ namespace IwSK
 {
     public partial class Form1 : Form
     {
+        private readonly IRs232Service service;
+
         public Form1()
         {
+            service = new Rs232Service();
+
             InitializeComponent();
         }
     }
