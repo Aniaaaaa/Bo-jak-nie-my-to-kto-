@@ -66,7 +66,7 @@ namespace rs232
 
             this.textBox2.Text = "Konfiguracja portu...";
 
-            var isOpen = service.SetParameters(portParameters);
+            var isOpen = service.OpenPort(portParameters);
             SetAllEnabled(!isOpen);
 
             if (isOpen)
@@ -87,9 +87,11 @@ namespace rs232
                 if (control is Control)
                     ((Control)control).Enabled = enabled;
             }
+
             button1.Enabled = enabled;
             button2.Enabled = !enabled;
             button3.Enabled = !enabled;
+            textBox3.Enabled = !enabled;
         }
         private void SetOwnTerminatorVisible(bool visible)
         {
@@ -101,6 +103,14 @@ namespace rs232
 
         private void button2_Click(object sender, EventArgs e)
         {
+            var message = service.Receive();
+
+            if (!string.IsNullOrEmpty(message))
+            {
+                this.textBox2.AppendText(Environment.NewLine);
+                this.textBox2.AppendText(message);
+            }
+
             SetAllEnabled(true);
             service.ClosePort();
         }
@@ -114,6 +124,7 @@ namespace rs232
         private void button12_Click(object sender, EventArgs e)
         {
             service.Send(this.textBox3.Text);
+            this.textBox3.Text = string.Empty;
         }
     }
 }

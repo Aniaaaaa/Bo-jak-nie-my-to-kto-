@@ -12,29 +12,35 @@ namespace rs232.Services
     public class Rs232Service : IRs232Service
     {
         private readonly SerialPort _serialPort = new SerialPort();
+        private string terminator;
+        private DataType dataType;
 
         public List<string> GetPortNames()
         {
             return SerialPort.GetPortNames().ToList();
         }
 
-        public bool SetParameters(PortParameters portParameters)
+        public bool OpenPort(PortParameters portParameters)
         {
+            terminator = portParameters.Terminator != Terminator.WŁASNY
+                ? Enum.GetName(typeof(Terminator), portParameters.Terminator)
+                : portParameters.MyTerminator;
+
+            dataType = portParameters.DataType;
+
             _serialPort.BaudRate = portParameters.Speed;
             _serialPort.StopBits = (System.IO.Ports.StopBits)portParameters.StopBits;
             _serialPort.DataBits = portParameters.DataBits;
-            //_serialPort.Terminator = portParameters.DataBits;   // check for WŁASNY
             _serialPort.PortName = portParameters.PortName;
-            //_serialPort.FlowControl
+            _serialPort.Handshake = (Handshake)portParameters.FlowControl;
             _serialPort.Parity = (System.IO.Ports.Parity)portParameters.Parity;
             _serialPort.ReadTimeout = (int)(portParameters.Timeout * 100);
             _serialPort.WriteTimeout = (int)(portParameters.Timeout * 100);
-            //_serialPort.DataType
 
             try
             {
                 _serialPort.Open();
-                return true;
+                return _serialPort.IsOpen;
             }
             catch
             {
@@ -45,12 +51,32 @@ namespace rs232.Services
 
         public void Send(string message)
         {
-            _serialPort.WriteLine($"[out] {message}");
+            if (_serialPort.IsOpen)
+            {
+                _serialPort.WriteLine($"[out] {message}{terminator}");
+            }
         }
 
         public void ClosePort()
         {
             _serialPort.Close();
+        }
+
+        public string Receive()
+        {
+            if (_serialPort.IsOpen)
+            {
+                try
+                {
+                    return $"[in] {_serialPort.ReadLine()}";
+                }
+                catch (TimeoutException)
+                {
+                    return null;
+                }
+            }
+
+            return null;
         }
     }
 }

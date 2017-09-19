@@ -14,7 +14,7 @@ namespace rs232.Services.Enums
 
         public enum Terminator { CR, LR, CRLF, BRAK, WŁASNY };
 
-        public enum FlowControl { XON_XOFF, RTS_CTS, DTR_DSR, BRAK };
+        public enum FlowControl { XON_XOFF = 1, RTS_CTS = 2, DTR_DSR = -1, BRAK = 0};
 
         public enum Parity { ODD, EVEN, BRAK };
 

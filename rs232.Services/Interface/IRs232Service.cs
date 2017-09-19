@@ -12,10 +12,12 @@ namespace rs232.Services
     {
         List<string> GetPortNames();
 
-        bool SetParameters(PortParameters portParameters);
+        bool OpenPort(PortParameters portParameters);
 
         void Send(string message);
 
         void ClosePort();
+
+        string Receive();
     }
 }
