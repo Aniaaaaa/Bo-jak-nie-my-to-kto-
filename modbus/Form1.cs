@@ -39,5 +39,27 @@ namespace rs232
             comboBox8.DataSource = Enumerable.Range(1,1000).Select(it => ((double)it)/100).Select(it => new KeyValuePair<double, double>(it, it)).ToList();
             comboBox9.DataSource = Enum.GetNames(typeof(DataType)).Select(it => new KeyValuePair<DataType, string>((DataType)Enum.Parse(typeof(DataType),it), it)).ToList();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach(var control in tableLayoutPanel1.Controls)
+            {
+                if (control is Control)
+                    ((Control)control).Enabled = false;
+            }
+            button1.Enabled = false;
+            button2.Enabled = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (var control in tableLayoutPanel1.Controls)
+            {
+                if (control is Control)
+                    ((Control)control).Enabled = true;
+            }
+            button1.Enabled = true;
+            button2.Enabled = false;
+        }
     }
 }
