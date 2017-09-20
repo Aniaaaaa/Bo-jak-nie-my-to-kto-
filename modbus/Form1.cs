@@ -38,6 +38,7 @@ namespace rs232
             comboBox7.DataSource = Enum.GetNames(typeof(Parity)).Select(it => new KeyValuePair<Parity, string>((Parity)Enum.Parse(typeof(Parity), it), it)).ToList();
             comboBox8.DataSource = Enumerable.Range(1,1000).Select(it => ((double)it)/100).Select(it => new KeyValuePair<double, double>(it, it)).ToList();
             comboBox9.DataSource = Enum.GetNames(typeof(DataType)).Select(it => new KeyValuePair<DataType, string>((DataType)Enum.Parse(typeof(DataType),it), it)).ToList();
+            SetAllEnabled(true);
 
             new Thread(() =>
             {
@@ -117,6 +118,7 @@ namespace rs232
             button2.Enabled = !enabled;
             button3.Enabled = !enabled;
             textBox3.Enabled = !enabled;
+            button12.Enabled = !enabled; // "wyślij"
         }
         private void SetOwnTerminatorVisible(bool visible)
         {
@@ -141,19 +143,27 @@ namespace rs232
         private void button12_Click(object sender, EventArgs e)
         {
             var message = this.textBox3.Text;
-            service.SendMessage(message);
+            var encodedMessage = message;
+            DataType transferType = (DataType)comboBox9.SelectedValue;
+            if (transferType == DataType.HEX)
+            {
+                if (!Regex.IsMatch(textBox3.Text, "^([0-9a-fA-F]{2}( )?)*$"))
+                {
+                    MessageBox.Show("Nieprawidłowy ciąg bajtów.", "Błąd walidacji", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                encodedMessage = service.HexToString(encodedMessage.Replace(" ", ""));
+            }
+            service.SendMessage(encodedMessage);
             this.textBox2.AppendText(Environment.NewLine);
-            if (comboBox9.Text == "ASCII")
-                this.textBox2.AppendText($"[out] {message}");
-            else if (comboBox9.Text == "HEX")
-                this.textBox2.AppendText($"[out] {service.StringToHex(textBox3.Text)}");
+            this.textBox2.AppendText($"[out] {message}");
             this.textBox3.Text = string.Empty;
             this.textBox3.Focus();
         }
 
         private void hexByte_Validating(object sender, CancelEventArgs e)
         {
-            if(!Regex.IsMatch(((TextBox)sender).Text, "^([0-9a-fA-F]{2})*$"))
+            if(!Regex.IsMatch(((TextBox)sender).Text, "^([0-9a-fA-F]{2}( )?)*$"))
             {
                 e.Cancel = true;
                 MessageBox.Show("Nieprawidłowy ciąg bajtów.", "Błąd walidacji", MessageBoxButtons.OK, MessageBoxIcon.Error);

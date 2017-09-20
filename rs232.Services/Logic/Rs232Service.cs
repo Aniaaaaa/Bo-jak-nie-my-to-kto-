@@ -19,7 +19,7 @@ namespace rs232.Services
             return SerialPort.GetPortNames().ToList();
         }
 
-        public string hexToString(String input)
+        public string HexToString(String input)
         {
             input = input.ToLower();
             byte[] bytes = new byte[input.Length / 2];
@@ -27,7 +27,6 @@ namespace rs232.Services
                 bytes[i / 2] = Convert.ToByte(input.Substring(i, 2), 16);
             string str = "";
             new List<byte>(bytes).ForEach(b => str += (char)b);
-            string reversed = StringToHex(str);
             return str;
         }
         public string StringToHex(String input)
@@ -39,7 +38,8 @@ namespace rs232.Services
                     .SelectMany(ch => new List<int> { ch / 16, ch % 16, 16 /*spacja*/ })
                     .Select(ch => hex[ch])
             );
-            str = str.Substring(0, str.Length - 1); // obcięcie ostatniej spacji
+            if(str!="")
+                str = str.Substring(0, str.Length - 1); // obcięcie ostatniej spacji
             return str;
             //input.Select(ch => )
         }
@@ -66,7 +66,7 @@ namespace rs232.Services
             _serialPort.WriteTimeout = (int)(portParameters.Timeout * 100);
             _serialPort.NewLine = portParameters.Terminator != Terminator.WŁASNY
                 ? TerminatorToAscii(portParameters.Terminator)
-                : hexToString(portParameters.MyTerminator);
+                : HexToString(portParameters.MyTerminator);
 
             try
             {
