@@ -38,7 +38,8 @@ namespace rs232.Services
                     .SelectMany(ch => new List<int> { ch / 16, ch % 16, 16 /*spacja*/ })
                     .Select(ch => hex[ch])
             );
-            str = str.Substring(0, str.Length - 1); // obcięcie ostatniej spacji
+            if(str!="")
+                str = str.Substring(0, str.Length - 1); // obcięcie ostatniej spacji
             return str;
             //input.Select(ch => )
         }
