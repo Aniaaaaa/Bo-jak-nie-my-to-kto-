@@ -19,6 +19,17 @@ namespace rs232.Services
             return SerialPort.GetPortNames().ToList();
         }
 
+        public string hexToString(String input)
+        {
+            input = input.ToLower();
+            byte[] bytes = new byte[input.Length / 2];
+            for (int i = 0; i < input.Length; i += 2)
+                bytes[i / 2] = Convert.ToByte(input.Substring(i, 2), 16);
+            string str = "";
+            new List<byte>(bytes).ForEach(b => str += (char)b);
+            return str;
+        }
+
         public bool OpenPort(PortParameters portParameters)
         {
             dataType = portParameters.DataType;
@@ -33,7 +44,7 @@ namespace rs232.Services
             _serialPort.WriteTimeout = (int)(portParameters.Timeout * 100);
             _serialPort.NewLine = portParameters.Terminator != Terminator.WŁASNY
                 ? TerminatorToAscii(portParameters.Terminator)
-                : portParameters.MyTerminator;
+                : hexToString(portParameters.MyTerminator);
 
             try
             {

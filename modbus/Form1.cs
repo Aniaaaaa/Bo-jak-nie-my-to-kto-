@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using rs232.Services.Model;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace rs232
 {
@@ -146,6 +147,15 @@ namespace rs232
 
             this.textBox3.Text = string.Empty;
             this.textBox3.Focus();
+        }
+
+        private void hexByte_Validating(object sender, CancelEventArgs e)
+        {
+            if(!Regex.IsMatch(((TextBox)sender).Text, "^([0-9a-fA-F]{2})*$"))
+            {
+                e.Cancel = true;
+                MessageBox.Show("Nieprawidłowy ciąg bajtów.", "Błąd walidacji", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -59,6 +59,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.button12 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.leftPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -145,6 +146,7 @@
             this.tableLayoutPanel1.Controls.Add(this.comboBox7, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.comboBox9, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -367,6 +369,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(127, 20);
             this.textBox1.TabIndex = 16;
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.hexByte_Validating);
             // 
             // comboBox9
             // 
@@ -445,6 +448,17 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Location = new System.Drawing.Point(3, 124);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 25);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "(hex)";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -501,6 +515,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label10;
     }
 }
 
