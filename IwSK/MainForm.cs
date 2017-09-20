@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using modbus.Services.Model;
 
 namespace modbus
 {
@@ -62,7 +63,27 @@ namespace modbus
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SetAllEnabled(false);
+            var portParameters = new PortParameters
+            {
+                Speed = Int32.Parse(this.comboBox1.Text),
+                PortName = this.comboBox2.Text,
+            };
+
+            this.textBox2.Text = "Konfiguracja portu...";
+
+            var isOpen = service.OpenPort(portParameters);
+            SetAllEnabled(!isOpen);
+
+            if (isOpen)
+            {
+                this.textBox2.AppendText(Environment.NewLine);
+                this.textBox2.Text += "Konfiguracja przebiegła pomyślnie.";
+            }
+            else
+            {
+                this.textBox2.AppendText(Environment.NewLine);
+                this.textBox2.Text += "Konfiguracja NIE przebiegła pomyślnie.";
+            }
         }
         private void SetAllEnabled(bool enabled)
         {
