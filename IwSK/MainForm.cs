@@ -94,6 +94,8 @@ namespace modbus
             }
             button1.Enabled = enabled;
             button2.Enabled = !enabled;
+            textBox1.Enabled = !enabled;
+            textBox1.Focus();
             if (enabled)
                 RefreshStationType();
         }
@@ -101,6 +103,7 @@ namespace modbus
         private void button2_Click(object sender, EventArgs e)
         {
             SetAllEnabled(true);
+            service.ClosePort();
         }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)

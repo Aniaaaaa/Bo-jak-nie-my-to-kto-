@@ -387,6 +387,7 @@
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(4, 21);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Multiline = true;
