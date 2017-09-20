@@ -137,6 +137,18 @@ namespace modbus
 
             this.textBox1.Text = string.Empty;
             this.textBox1.Focus();
+            if (textBox5.Text == "1")
+            {
+                //wysyłamy wiadomość do slave'a
+            }
+            else if (textBox5.Text == "2") {
+                //wysyłamy rządanie odpowiedzi do slave'a
+            }
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
