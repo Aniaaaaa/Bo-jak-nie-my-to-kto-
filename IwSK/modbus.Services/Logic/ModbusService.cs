@@ -66,7 +66,7 @@ namespace modbus.Services
             return null;
         }
 
-        public Frame Send(Frame frame)
+        public Frame Execute(Frame frame)
         {
             if (IsFrameValid(frame))
             {
