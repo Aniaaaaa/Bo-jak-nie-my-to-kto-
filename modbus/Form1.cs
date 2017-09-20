@@ -141,19 +141,27 @@ namespace rs232
         private void button12_Click(object sender, EventArgs e)
         {
             var message = this.textBox3.Text;
-            service.SendMessage(message);
+            var encodedMessage = message;
+            DataType transferType = (DataType)comboBox9.SelectedValue;
+            if (transferType == DataType.HEX)
+            {
+                if (!Regex.IsMatch(textBox3.Text, "^([0-9a-fA-F]{2}( )?)*$"))
+                {
+                    MessageBox.Show("Nieprawidłowy ciąg bajtów.", "Błąd walidacji", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                encodedMessage = service.HexToString(encodedMessage.Replace(" ", ""));
+            }
+            service.SendMessage(encodedMessage);
             this.textBox2.AppendText(Environment.NewLine);
-            if (comboBox9.Text == "ASCII")
-                this.textBox2.AppendText($"[out] {message}");
-            else if (comboBox9.Text == "HEX")
-                this.textBox2.AppendText($"[out] {service.StringToHex(textBox3.Text)}");
+            this.textBox2.AppendText($"[out] {message}");
             this.textBox3.Text = string.Empty;
             this.textBox3.Focus();
         }
 
         private void hexByte_Validating(object sender, CancelEventArgs e)
         {
-            if(!Regex.IsMatch(((TextBox)sender).Text, "^([0-9a-fA-F]{2})*$"))
+            if(!Regex.IsMatch(((TextBox)sender).Text, "^([0-9a-fA-F]{2}( )?)*$"))
             {
                 e.Cancel = true;
                 MessageBox.Show("Nieprawidłowy ciąg bajtów.", "Błąd walidacji", MessageBoxButtons.OK, MessageBoxIcon.Error);
