@@ -43,6 +43,7 @@
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Interface\IModbusService.cs" />
     <Compile Include="Logic\ModbusService.cs" />
+    <Compile Include="Model\Frame.cs" />
     <Compile Include="Model\PortParameters.cs" />
   </ItemGroup>
   <ItemGroup>
