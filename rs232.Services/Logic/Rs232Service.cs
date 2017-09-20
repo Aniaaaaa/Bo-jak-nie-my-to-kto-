@@ -41,6 +41,14 @@ namespace rs232.Services
             return str;
             //input.Select(ch => )
         }
+        public byte LRC(String input)
+        {
+            int LRC = 0;
+            foreach(byte b in input)
+                LRC = (LRC + b) & 0xFF;
+            LRC = (((LRC ^ 0xFF) + 1) & 0xFF);
+            return (byte)LRC;
+        }
 
         public bool OpenPort(PortParameters portParameters)
         {
