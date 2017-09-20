@@ -97,7 +97,10 @@ namespace rs232.Services
             {
                 try
                 {
-                    return $"[in] {_serialPort.ReadLine()}";
+                    if (dataType == DataType.ASCII)
+                        return $"[in] {_serialPort.ReadLine()}";
+                    else if (dataType == DataType.HEX)
+                        return $"[in] {StringToHex(_serialPort.ReadLine())}";
                 }
                 catch
                 {

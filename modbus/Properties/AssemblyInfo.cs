@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("modbus")]
+[assembly: AssemblyTitle("rs232")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Toshiba")]
-[assembly: AssemblyProduct("modbus")]
+[assembly: AssemblyProduct("rs232")]
 [assembly: AssemblyCopyright("Copyright © Toshiba 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

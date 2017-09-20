@@ -18,6 +18,8 @@ namespace rs232.Services
 
         void SendMessage(string message);
 
+        string StringToHex(string input);
+
         string ReceiveMessage();
     }
 }
