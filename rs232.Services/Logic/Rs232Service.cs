@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO.Ports;
 using rs232.Services.Model;
+using System.Diagnostics;
 
 namespace rs232.Services
 {
@@ -13,6 +14,7 @@ namespace rs232.Services
     {
         private readonly SerialPort _serialPort = new SerialPort();
         private DataType dataType;
+        private Stopwatch sw = new Stopwatch();
 
         public List<string> GetPortNames()
         {
@@ -93,16 +95,38 @@ namespace rs232.Services
             }
         }
 
+        public void SendPing()
+        {
+            sw.Restart();
+            SendMessage("PING");
+        }
+
         public string ReceiveMessage()
         {
             if (_serialPort.IsOpen)
             {
                 try
                 {
+                    string message = "";
+
                     if (dataType == DataType.ASCII)
-                        return $"[in] {_serialPort.ReadLine()}";
+                        message = _serialPort.ReadLine();
                     else if (dataType == DataType.HEX)
-                        return $"[in] {StringToHex(_serialPort.ReadLine())}";
+                        message = StringToHex(_serialPort.ReadLine());
+
+                    // check if ping
+                    if (message.Equals("PING"))
+                    {
+                        SendMessage("PONG");
+                        return null;
+                    }
+                    else if (message.Equals("PONG"))
+                    {
+                        sw.Stop();
+                        return $"PING {sw.Elapsed.TotalMilliseconds}ms";
+                    }
+
+                    return $"[in] {message}";
                 }
                 catch
                 {

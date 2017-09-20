@@ -169,5 +169,10 @@ namespace rs232
                 MessageBox.Show("Nieprawidłowy ciąg bajtów.", "Błąd walidacji", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            service.SendPing();
+        }
     }
 }

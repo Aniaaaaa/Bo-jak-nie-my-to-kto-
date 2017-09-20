@@ -22,5 +22,7 @@ namespace rs232.Services
         string HexToString(string input);
 
         string ReceiveMessage();
+
+        void SendPing();
     }
 }
