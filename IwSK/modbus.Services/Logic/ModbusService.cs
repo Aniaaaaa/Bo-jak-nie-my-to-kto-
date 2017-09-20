@@ -12,6 +12,8 @@ namespace modbus.Services
     {
         private readonly SerialPort _serialPort = new SerialPort();
 
+        public Frame RequestFrame { get; set; }
+
         public List<string> GetPortNames()
         {
             return SerialPort.GetPortNames().ToList();
@@ -63,5 +65,42 @@ namespace modbus.Services
 
             return null;
         }
+
+        public Frame Send(Frame frame)
+        {
+            if (IsFrameValid(frame))
+            {
+                if (frame.Function == Enums.Enums.Function.SEND)
+                {
+                    return SendRequest(frame);
+                }
+                else if (frame.Function == Enums.Enums.Function.GET)
+                {
+                    return GetRequest(frame);
+                }
+            }
+
+            return null;
+        }
+
+        #region Private methods
+
+        private bool IsFrameValid(Frame frame)
+        {
+            return frame.Address == RequestFrame.Address &&
+                frame.Function == RequestFrame.Function;
+        }
+
+        private Frame SendRequest(Frame frame)
+        {
+            throw new NotImplementedException();
+        }
+
+        private Frame GetRequest(Frame frame)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

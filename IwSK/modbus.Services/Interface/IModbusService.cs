@@ -18,5 +18,7 @@ namespace modbus.Services
         void SendMessage(string message);
 
         string ReceiveMessage();
+
+        Frame Send(Frame frame);
     }
 }

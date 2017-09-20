@@ -11,5 +11,7 @@ namespace modbus.Services.Enums
         public enum Transmission { T_7E1, T_7O1, T_7N2 };
 
         public enum Station { SLAVE, MASTER };
+
+        public enum Function { SEND, GET };
     }
 }
