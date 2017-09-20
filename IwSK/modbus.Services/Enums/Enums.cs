@@ -12,6 +12,6 @@ namespace modbus.Services.Enums
 
         public enum Station { SLAVE, MASTER };
 
-        public enum Function { SEND, GET };
+        public enum Function : byte { SEND, GET };
     }
 }
