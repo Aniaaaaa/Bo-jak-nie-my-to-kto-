@@ -26,8 +26,6 @@ namespace rs232
             InitializeComponent();
         }
 
-        private Dictionary<Signal, Button> signals;
-
         private void Form1_Load(object sender, EventArgs e)
         {
             comboBox1.DataSource = new List<int> { 150, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 56000, 57600, 115200 }.Select(it => new KeyValuePair<int, int>(it, it)).ToList();
@@ -39,8 +37,6 @@ namespace rs232
             comboBox7.DataSource = Enum.GetNames(typeof(Parity)).Select(it => new KeyValuePair<Parity, string>((Parity)Enum.Parse(typeof(Parity), it), it)).ToList();
             comboBox8.DataSource = Enumerable.Range(1,1000).Select(it => ((double)it)/100).Select(it => new KeyValuePair<double, double>(it, it)).ToList();
             comboBox9.DataSource = Enum.GetNames(typeof(DataType)).Select(it => new KeyValuePair<DataType, string>((DataType)Enum.Parse(typeof(DataType),it), it)).ToList();
-            signals = new Dictionary<Signal, Button> { { Signal.OB, button4}, { Signal.DA, button5 }, { Signal.DTR, button6 },
-                {Signal.DSR, button7 }, { Signal.RTS, button8 }, {Signal.CTS, button9 }, {Signal.CD, button10 }, {Signal.RI, button11 } };
 
             new Thread(() =>
             {
@@ -63,11 +59,6 @@ namespace rs232
                     }
                 }
             }).Start();
-        }
-
-        public void SetSignalState(Signal signal, SignalState state)
-        {
-            signals[signal].ImageIndex = (int)state;
         }
 
         private void button1_Click(object sender, EventArgs e)
