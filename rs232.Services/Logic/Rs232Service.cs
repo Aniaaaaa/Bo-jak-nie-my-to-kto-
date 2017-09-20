@@ -29,6 +29,18 @@ namespace rs232.Services
             new List<byte>(bytes).ForEach(b => str += (char)b);
             return str;
         }
+        public string StringToHex(String input)
+        {
+            string hex = "0123456789abcdef";
+            string str = String.Concat(
+                input
+                    .Select(ch => (int)ch)
+                    .SelectMany(ch => new List<int> { ch / 16, ch % 16 })
+                    .Select(ch => hex[ch])
+            );
+            return str;
+            //input.Select(ch => )
+        }
 
         public bool OpenPort(PortParameters portParameters)
         {
