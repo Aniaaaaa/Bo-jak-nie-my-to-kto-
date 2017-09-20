@@ -53,13 +53,13 @@
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.centerPanel = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.button12 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
             this.leftPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -384,6 +384,17 @@
             this.comboBox9.TabIndex = 19;
             this.comboBox9.ValueMember = "Key";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Location = new System.Drawing.Point(3, 124);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 25);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "(hex)";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // centerPanel
             // 
             this.centerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -447,17 +458,6 @@
             this.button12.Text = "Wyślij";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Location = new System.Drawing.Point(3, 124);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 25);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "(hex)";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Form1
             // 

@@ -143,8 +143,10 @@ namespace rs232
             var message = this.textBox3.Text;
             service.SendMessage(message);
             this.textBox2.AppendText(Environment.NewLine);
-            this.textBox2.AppendText($"[out] {message}");
-
+            if (comboBox9.Text == "ASCII")
+                this.textBox2.AppendText($"[out] {message}");
+            else if (comboBox9.Text == "HEX")
+                this.textBox2.AppendText($"[out] {service.StringToHex(textBox3.Text)}");
             this.textBox3.Text = string.Empty;
             this.textBox3.Focus();
         }
