@@ -12,7 +12,23 @@ namespace rs232.Services.Enums
 
         public enum StopBits { ONE = 1, TWO = 2};
 
-        public enum Terminator { CR, LR, CRLF, BRAK, WŁASNY };
+        public enum Terminator { CR, LF, CRLF, BRAK, WŁASNY };
+        public static string TerminatorToAscii(Terminator ter)
+        {
+            switch (ter)
+            {
+                case Terminator.CR:
+                    return "\r";
+                case Terminator.LF:
+                    return "\n";
+                case Terminator.CRLF:
+                    return "\r\n";
+                case Terminator.BRAK:
+                case Terminator.WŁASNY:
+                default:
+                    return "";
+            }
+        }
 
         public enum FlowControl { XON_XOFF = 1, RTS_CTS = 2, DTR_DSR = -1, BRAK = 0};
 

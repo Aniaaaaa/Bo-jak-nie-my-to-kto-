@@ -32,7 +32,7 @@ namespace rs232.Services
             _serialPort.ReadTimeout = (int)(portParameters.Timeout * 100);
             _serialPort.WriteTimeout = (int)(portParameters.Timeout * 100);
             _serialPort.NewLine = portParameters.Terminator != Terminator.WŁASNY
-                ? Enum.GetName(typeof(Terminator), portParameters.Terminator)
+                ? TerminatorToAscii(portParameters.Terminator)
                 : portParameters.MyTerminator;
 
             try

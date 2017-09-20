@@ -110,6 +110,16 @@ namespace rs232
                 if (control is Control)
                     ((Control)control).Enabled = enabled;
             }
+            if(enabled)
+            {
+                var value = comboBox5.SelectedValue;
+                comboBox5.DataSource = service.GetPortNames().Select(it => new KeyValuePair<string, string>(it, it)).ToList();
+                try
+                {
+                    comboBox5.SelectedValue = value;
+                }
+                catch (Exception) { }
+            }
 
             button1.Enabled = enabled;
             button2.Enabled = !enabled;
