@@ -7,8 +7,8 @@
     <ProjectGuid>{B48F7C7C-3FC6-4866-B706-59EB32CE0EEB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>modbus</RootNamespace>
-    <AssemblyName>modbus</AssemblyName>
+    <RootNamespace>rs232</RootNamespace>
+    <AssemblyName>rs232</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
