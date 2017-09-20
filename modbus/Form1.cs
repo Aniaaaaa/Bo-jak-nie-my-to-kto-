@@ -38,6 +38,7 @@ namespace rs232
             comboBox7.DataSource = Enum.GetNames(typeof(Parity)).Select(it => new KeyValuePair<Parity, string>((Parity)Enum.Parse(typeof(Parity), it), it)).ToList();
             comboBox8.DataSource = Enumerable.Range(1,1000).Select(it => ((double)it)/100).Select(it => new KeyValuePair<double, double>(it, it)).ToList();
             comboBox9.DataSource = Enum.GetNames(typeof(DataType)).Select(it => new KeyValuePair<DataType, string>((DataType)Enum.Parse(typeof(DataType),it), it)).ToList();
+            SetAllEnabled(true);
 
             new Thread(() =>
             {
@@ -117,6 +118,7 @@ namespace rs232
             button2.Enabled = !enabled;
             button3.Enabled = !enabled;
             textBox3.Enabled = !enabled;
+            button12.Enabled = !enabled; // "wyślij"
         }
         private void SetOwnTerminatorVisible(bool visible)
         {
