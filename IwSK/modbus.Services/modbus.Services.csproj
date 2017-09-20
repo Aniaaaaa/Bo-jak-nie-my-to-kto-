@@ -47,6 +47,9 @@
     <Compile Include="Model\PortParameters.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="NModbus4">
+      <HintPath>..\packages\NModbus4.2.1.0\lib\net40\NModbus4.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.IO.Ports, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Ports.4.4.0\lib\net461\System.IO.Ports.dll</HintPath>
