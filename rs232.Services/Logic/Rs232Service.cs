@@ -27,17 +27,19 @@ namespace rs232.Services
                 bytes[i / 2] = Convert.ToByte(input.Substring(i, 2), 16);
             string str = "";
             new List<byte>(bytes).ForEach(b => str += (char)b);
+            string reversed = StringToHex(str);
             return str;
         }
         public string StringToHex(String input)
         {
-            string hex = "0123456789abcdef";
+            string hex = "0123456789abcdef "; /*na końcu spacja jako hack na linq*/
             string str = String.Concat(
                 input
                     .Select(ch => (int)ch)
-                    .SelectMany(ch => new List<int> { ch / 16, ch % 16 })
+                    .SelectMany(ch => new List<int> { ch / 16, ch % 16, 16 /*spacja*/ })
                     .Select(ch => hex[ch])
             );
+            str = str.Substring(0, str.Length - 1); // obcięcie ostatniej spacji
             return str;
             //input.Select(ch => )
         }
