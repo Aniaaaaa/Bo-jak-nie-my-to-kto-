@@ -11,11 +11,12 @@ using System.Threading.Tasks;
 using Modbus.Data;
 using Modbus.Device;
 using Modbus.Utility;
-//using Modbus.Serial;
+using Modbus.Serial;
+using Modbus.IO;
 
 namespace modbus.Services
 {
-    /*   public class ModbusService : IModbusService
+       public class ModbusService : IModbusService
        {
            private readonly SerialPort _serialPort = new SerialPort();
 
@@ -60,9 +61,19 @@ namespace modbus.Services
            {
                if (_serialPort.IsOpen)
                {
+                string message = _serialPort.ReadLine();
                    try
                    {
-                       return $"[in] {_serialPort.ReadLine()}";
+                    if (!message.Contains("*&*"))
+                    {
+                        return $"[in] {message}";
+                    }
+                    else
+                    {
+                        message.Replace("*&*", "");
+                        SendMessage(message);
+                        return $"[in] {message}";
+                    }
                    }
                    catch
                    {
@@ -109,12 +120,12 @@ namespace modbus.Services
            }
 
            #endregion
-       }*/
+       }
 
     /// <summary>
     ///     Demonstration of NModbus
     /// </summary>
-    public class Driver
+   /* public class Driver
     {
 
         public List<string> GetPortNames()
@@ -212,7 +223,7 @@ namespace modbus.Services
                 ModbusSlave slave = ModbusSerialSlave.CreateAscii(slaveId, slaveAdapter);
                 var listenTask = slave.ListenAsync();
 
-                var masterAdapter = new SerialPortAdapter(masterPort);
+                //var masterAdapter = new SerialPortAdapter(masterPort);
                 // create modbus master
                 ModbusSerialMaster master = ModbusSerialMaster.CreateAscii(masterAdapter);
 
@@ -270,5 +281,5 @@ namespace modbus.Services
                 uint value = ModbusUtility.GetUInt32(registers[1], registers[0]);
             }
         }
-    }
+    }*/
 }

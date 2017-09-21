@@ -131,17 +131,24 @@ namespace modbus
         private void button3_Click(object sender, EventArgs e)
         {
             var message = this.textBox1.Text;
-            service.SendMessage(message);
-            this.textBox3.AppendText(Environment.NewLine);
-            this.textBox3.AppendText($"[out] {message}");
 
-            this.textBox1.Text = string.Empty;
-            this.textBox1.Focus();
             if (textBox5.Text == "1")
             {
+                service.SendMessage(message);
+                this.textBox3.AppendText(Environment.NewLine);
+                this.textBox3.AppendText($"[out] {message}");
+
+                this.textBox1.Text = string.Empty;
+                this.textBox1.Focus();
                 //wysyłamy wiadomość do slave'a
             }
             else if (textBox5.Text == "2") {
+                service.SendMessage("*&*"+ message);
+                this.textBox3.AppendText(Environment.NewLine);
+                this.textBox3.AppendText($"[out] {message}");
+
+                this.textBox1.Text = string.Empty;
+                this.textBox1.Focus();
                 //wysyłamy rządanie odpowiedzi do slave'a
             }
         }

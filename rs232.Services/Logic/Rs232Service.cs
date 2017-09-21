@@ -91,6 +91,8 @@ namespace rs232.Services
         {
             if (_serialPort.IsOpen)
             {
+                string port = _serialPort.BaudRate + " " + _serialPort.StopBits + " " + _serialPort.DataBits + " " + _serialPort.Parity + " " + _serialPort.NewLine;
+                _serialPort.WriteLine(port);
                 _serialPort.WriteLine(message);
             }
         }
@@ -108,25 +110,24 @@ namespace rs232.Services
                 try
                 {
                     string message = "";
+                        if (dataType == DataType.ASCII)
+                            message = _serialPort.ReadLine();
+                        else if (dataType == DataType.HEX)
+                            message = StringToHex(_serialPort.ReadLine());
 
-                    if (dataType == DataType.ASCII)
-                        message = _serialPort.ReadLine();
-                    else if (dataType == DataType.HEX)
-                        message = StringToHex(_serialPort.ReadLine());
+                        // check if ping
+                        if (message.Equals("PING"))
+                        {
+                            SendMessage("PONG");
+                            return null;
+                        }
+                        else if (message.Equals("PONG"))
+                        {
+                            sw.Stop();
+                            return $"PING {sw.Elapsed.TotalMilliseconds}ms";
+                        }
 
-                    // check if ping
-                    if (message.Equals("PING"))
-                    {
-                        SendMessage("PONG");
-                        return null;
-                    }
-                    else if (message.Equals("PONG"))
-                    {
-                        sw.Stop();
-                        return $"PING {sw.Elapsed.TotalMilliseconds}ms";
-                    }
-
-                    return $"[in] {message}";
+                        return $"[in] {message}";
                 }
                 catch
                 {
