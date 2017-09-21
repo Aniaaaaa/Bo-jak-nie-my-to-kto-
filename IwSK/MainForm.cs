@@ -71,7 +71,7 @@ namespace modbus
 
             this.textBox2.Text = "Konfiguracja portu...";
 
-            var isOpen = service.OpenPort(portParameters);
+            var isOpen = service.OpenPort(portParameters, comboBox6.Text);
             SetAllEnabled(!isOpen);
 
             if (isOpen)

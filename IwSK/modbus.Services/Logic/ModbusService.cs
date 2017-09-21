@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Modbus.Data;
 using Modbus.Device;
 using Modbus.Utility;
-using Modbus.Serial;
+//using Modbus.Serial;
 using Modbus.IO;
 
 namespace modbus.Services
@@ -19,7 +19,7 @@ namespace modbus.Services
        public class ModbusService : IModbusService
        {
            private readonly SerialPort _serialPort = new SerialPort();
-
+           private string stations;
            public Frame RequestFrame { get; set; }
 
            public List<string> GetPortNames()
@@ -27,10 +27,11 @@ namespace modbus.Services
                return SerialPort.GetPortNames().ToList();
            }
 
-           public bool OpenPort(PortParameters portParameters)
+           public bool OpenPort(PortParameters portParameters, string station)
            {
                _serialPort.BaudRate = portParameters.Speed;
                _serialPort.PortName = portParameters.PortName;
+               stations = station;
 
                try
                {
@@ -70,8 +71,9 @@ namespace modbus.Services
                     }
                     else
                     {
-                        message.Replace("*&*", "");
-                        SendMessage(message);
+                        message =  message.Replace("*&*","");
+                        if (stations.Equals("SLAVE"))
+                            SendMessage(message);
                         return $"[in] {message}";
                     }
                    }

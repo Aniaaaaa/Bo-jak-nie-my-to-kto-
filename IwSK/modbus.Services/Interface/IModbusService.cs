@@ -11,7 +11,7 @@ namespace modbus.Services
     {
         List<string> GetPortNames();
 
-        bool OpenPort(PortParameters portParameters);
+        bool OpenPort(PortParameters portParameters, string station);
 
         void ClosePort();
 
